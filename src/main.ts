@@ -1,32 +1,23 @@
 import { Firebot } from "@crowbartools/firebot-custom-scripts-types";
+import { getIntegration } from "./example-integration";
 
-interface Params {
-  message: string;
-}
-
-const script: Firebot.CustomScript<Params> = {
+const script: Firebot.CustomScript = {
   getScriptManifest: () => {
     return {
-      name: "Starter Custom Script",
-      description: "A starter custom script for build",
+      name: "Starter Integration Script",
+      description: "A starter custom script for building integrations.",
       author: "SomeDev",
       version: "1.0",
       firebotVersion: "5",
+      startupOnly: true,
     };
   },
   getDefaultParameters: () => {
-    return {
-      message: {
-        type: "string",
-        default: "Hello World!",
-        description: "Message",
-        secondaryDescription: "Enter a message here",
-      },
-    };
+    return {};
   },
   run: (runRequest) => {
-    const { logger } = runRequest.modules;
-    logger.info(runRequest.parameters.message);
+    const { logger, integrationManager } = runRequest.modules;
+    integrationManager.registerIntegration(getIntegration(logger));
   },
 };
 
