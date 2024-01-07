@@ -1,5 +1,5 @@
 {
-  "name": "firebot-custom-script-starter",
+  "name": "firebot-custom-script-integration-starter",
   "scriptOutputName": "starterIntegrationScript",
   "version": "1.0.0",
   "description": "A starter Firebot custom script for integrations",
