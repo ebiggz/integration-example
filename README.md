@@ -1,4 +1,6 @@
-# Starter Firebot Custom Script in Typescript
+# Starter Firebot Custom Script for Integrations in Typescript
+
+Based on the [main Firebot starter template](https://github.com/crowbartools/firebot-custom-script-starter), but includes an example integration definition to get you started.
 
 ### Setup
 1. Create a new repo based off this template (Click "Use this Template" above) or simply fork it
